@@ -1,0 +1,36 @@
+
+.default-paper{
+  position: relative;
+  .default-paper-container{
+    background-color: #ffffff;
+    padding:16px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    &.align-left{
+      align-items: flex-start;
+    }
+    &.align-center{
+      align-items: center;
+    }
+    &.align-right{
+      align-items: flex-end;
+    }
+    &.align-justify{
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: flex-start;
+    }
+  }
+  .default-paper-operation{
+    margin-bottom:10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: flex-end;
+    // margin-top:-36px;
+    position: absolute;
+    top: -36px;
+    right:0;
+  }
+}

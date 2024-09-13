@@ -1,0 +1,58 @@
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+  &.minor{
+    color:#adadad ;
+  }
+}
+body {
+  margin: 0;
+  // display: flex;
+  // place-items: center;
+  // min-width: 320px;
+  min-height: 100vh;
+  background-color: #f8f9fb;
+}
+
+code{
+  display: block;
+  white-space:pre;
+  background-color: #e8e8e8;
+  padding:1em;
+  border-radius: 6px;
+}
+
+
+@media (prefers-color-scheme: light) {
+
+}
+
+
+/* default ui */ 
+
+// select{
+//   border-radius: 8px;
+//   box-sizing: border-box;
+//   height: 2em;
+//   line-height: 2em;
+//   padding: 0 1em;
+// }
+
+/* overwrite */
+
+.MuiDialog-container{
+  backdrop-filter: blur(6px);
+}
