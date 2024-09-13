@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { styled } from "styled-components";
-import { PWA } from "$src/components";
+import { PWA, Logo } from "$src/components";
+import { Tooltip } from "@mui/material";
 
 const Footer = styled.div`
   background: white;
@@ -132,12 +134,16 @@ export default function () {
       <dl className="other-links">
         <dt>关于</dt>
         <dd>
-          <Link
-            to="/apps/base64?input=amVsbGUubHVAZ21haWwuY29t"
-            title="点击查看"
-          >
-            联系方式(点击查看)
-          </Link>
+          <Tooltip title="Github" arrow>
+            <Link to="https://github.com/abcuitls/abcuitls" target="_blank">
+              <GitHubIcon />
+            </Link>
+          </Tooltip>
+        </dd>
+        <dd>
+          <a to="https://github.com/abcutils/abcutils/issues" target="_blank">
+            反馈 issues
+          </a>
         </dd>
         <dd>
           <Link to="https://beian.miit.gov.cn" target="_blank">
