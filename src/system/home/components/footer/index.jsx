@@ -135,7 +135,7 @@ export default function () {
         <dt>关于</dt>
         <dd>
           <Tooltip title="Github" arrow>
-            <Link to="https://github.com/abcuitls/abcuitls" target="_blank">
+            <Link to="https://github.com/abcutils/abcutils" target="_blank">
               <GitHubIcon />
             </Link>
           </Tooltip>
