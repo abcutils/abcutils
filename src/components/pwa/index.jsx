@@ -1,13 +1,7 @@
 import React from "react";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
 import Alert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
-import SnackbarContent from "@mui/material/SnackbarContent";
 import Tooltip from "@mui/material/Tooltip";
-import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import ReplayCircleFilledIcon from "@mui/icons-material/ReplayCircleFilled";
 import { LoadingButton } from "$src/components";
@@ -27,6 +21,7 @@ export default function () {
     updateSWRef.current = registerSW({
       onNeedRefresh() {
         setHasUpdate(true);
+        setShowDialog(true);
       },
       onOfflineReady() {
         console.log("应用离线成功");
