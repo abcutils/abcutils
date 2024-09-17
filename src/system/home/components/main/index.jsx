@@ -140,10 +140,10 @@ function FirstScreen() {
           variant="outlined"
           component={Link}
           to="/apps/json"
+          sx={{ marginBottom: 1 }}
         >
-          下载 Mac OS App(darwin-arm64)
+          免费在线使用
         </Button>
-        <br />
         <br />
         <Button
           size="large"
@@ -151,10 +151,11 @@ function FirstScreen() {
           component={"a"}
           href="https://auto-rok-game.oss-cn-hangzhou.aliyuncs.com/abc-utils/ABC%20Utils-darwin-arm64-1.0.0.zip"
           target="_blank"
+          sx={{ marginBottom: 1 }}
         >
           下载 Mac OS App(darwin-arm64)
         </Button>
-        <br />
+
         <br />
         <Button
           disabled
