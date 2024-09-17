@@ -134,14 +134,38 @@ function FirstScreen() {
             <span>不收集客户数据，保障你的隐私安全</span>
           </p>
         </div>
+
         <Button
           size="large"
-          variant="contained"
+          variant="outlined"
           component={Link}
           to="/apps/json"
-          sx={{ width: "60%" }}
         >
-          免费在线使用
+          下载 Mac OS App(darwin-arm64)
+        </Button>
+        <br />
+        <br />
+        <Button
+          size="large"
+          variant="outlined"
+          component={"a"}
+          href="https://auto-rok-game.oss-cn-hangzhou.aliyuncs.com/abc-utils/ABC%20Utils-darwin-arm64-1.0.0.zip"
+          target="_blank"
+        >
+          下载 Mac OS App(darwin-arm64)
+        </Button>
+        <br />
+        <br />
+        <Button
+          disabled
+          size="large"
+          variant="outlined"
+          component={"a"}
+          href=""
+          target="_blank"
+          title="制作中..."
+        >
+          下载 Windows App(x64)
         </Button>
       </div>
       <div className="demo">

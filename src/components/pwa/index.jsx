@@ -3,6 +3,9 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
+import Alert from "@mui/material/Alert";
+import Snackbar from "@mui/material/Snackbar";
+import SnackbarContent from "@mui/material/SnackbarContent";
 import Tooltip from "@mui/material/Tooltip";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
@@ -11,7 +14,6 @@ import { LoadingButton } from "$src/components";
 // #if [__INCLUDING_PWA__]
 import { registerSW } from "virtual:pwa-register";
 // #endif
-// import { isInElectronMacApp } from "$src/utils";
 
 // 新版本提示
 export default function () {
@@ -24,19 +26,7 @@ export default function () {
     console.log("registerSW");
     updateSWRef.current = registerSW({
       onNeedRefresh() {
-        // if (isInElectronMacApp()) {
         setHasUpdate(true);
-        // } else {
-        //   // 自动更新
-        //   updateSWRef
-        //     .current()
-        //     .then(() => {
-        //       console.log("自动更新成功");
-        //     })
-        //     .catch((e) => {
-        //       console.log("pwa 更新失败", e);
-        //     });
-        // }
       },
       onOfflineReady() {
         console.log("应用离线成功");
@@ -58,35 +48,37 @@ export default function () {
               />
             </IconButton>
           </Tooltip>
-          <Dialog
+          <Snackbar
             open={showDialog}
             maxWidth="sm"
+            anchorOrigin={{ vertical: "top", horizontal: "left" }}
             onClose={() => setShowDialog(false)}
           >
-            <DialogTitle>有新版本可以更新啦</DialogTitle>
-            <DialogContent>
-              请确保互联网访问畅通， 更新大约会下载 5~10M 的数据。
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={() => setShowDialog(false)}>取消</Button>
-              <LoadingButton
-                onClick={() => {
-                  return updateSWRef
-                    .current()
-                    .then(() => {
-                      setShowDialog(false);
-                      console.log("更新成功");
-                    })
-                    .catch((e) => {
-                      console.log(e);
-                    });
-                }}
-                variant="contained"
-              >
-                更新
-              </LoadingButton>
-            </DialogActions>
-          </Dialog>
+            <Alert
+              severity="success"
+              action={
+                <LoadingButton
+                  size="small"
+                  variant="contained"
+                  onClick={() => {
+                    updateSWRef
+                      .current()
+                      .then(() => {
+                        setShowDialog(false);
+                        console.log("更新成功");
+                      })
+                      .catch((e) => {
+                        console.log(e);
+                      });
+                  }}
+                >
+                  更新
+                </LoadingButton>
+              }
+            >
+              新版本已就绪，点击“更新”按钮切换到新版本
+            </Alert>
+          </Snackbar>
         </>
       ) : null}
     </>

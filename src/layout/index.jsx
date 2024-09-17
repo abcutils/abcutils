@@ -26,17 +26,18 @@ import { useStorgeState } from "$src/hooks";
 import { isInElectronMacApp } from "$src/utils";
 import { Logo, PWA, Baffle } from "$src/components";
 
-// import "./index.less";
-
 const _isInElectronMacApp = isInElectronMacApp();
 
 const MacAppTitleBar = styled.div`
   position: absolute;
   width: 100%;
-  height: ${($display) => ($display ? 30 : 0)};
+  height: ${($display) => ($display ? "30px" : 0)};
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   -webkit-app-region: drag;
+  &:hover {
+    background-color: #e5e5e52b;
+  }
 `;
 
 const AppLayout = styled.div`
