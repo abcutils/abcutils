@@ -116,7 +116,7 @@ function FirstScreen() {
                   sx={{ color: "#646cff", verticalAlign: "middle" }}
                 />
               </Tooltip>
-              使用 PWA 技术离线保障离线可用
+              使用 PWA 技术保障网站离线可用
             </span>
           </p>
           <p>
@@ -244,7 +244,7 @@ function UtilsList() {
             <Link to="/apps/base64-files">图片Base64 编码解码</Link>
           </dd>
           <dd>
-            <Link to="/apps/sha256">HAS 算法</Link>
+            <Link to="/apps/sha256">HASH 算法</Link>
           </dd>
           <dd>
             <Link to="/apps/sha256">UUID 生成</Link>

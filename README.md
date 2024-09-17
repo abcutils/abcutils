@@ -6,25 +6,26 @@
 - <https://abcutils.com>
 - 免费/开源的在线工具库，像 ABC 一样简单
 - Free online utils, As simple as the letters "abc"
+- 推荐使用 Chrome 浏览器访问
 
-# 版本发布
+## 版本发布
 
-- 每周一次构建 main 分支代码发布到 <https://abcutils.com>
+- 每周一次构建 main 分支，发布到 <https://abcutils.com>
 
-# 开发计划
+## 开发计划
 
 - Mac App 正在构建中...
 - Windows App 正在构建中...
 
-# 反馈&贡献
+## 反馈&贡献
 
-- 如果发现 bug 反应反馈到 issues
+- 如果发现 Bug 请反馈到 issues
 - 也欢迎提交新的在线工具
 
-# 贡献者
+## 贡献者
 
 <https://github.com/abcutils>
 
-# License
+## License
 
 [MIT licensed](https://github.com/abcutils/abcutils/blob/main/LICENSE)
