@@ -187,7 +187,7 @@ function FirstScreen() {
         </Button>
       </div>
       <div className="demo">
-        <video autoPlay loop playsInline poster={sp} width="100%">
+        <video autoPlay loop playsInline muted poster={sp} width="100%">
           <source
             src="https://www.abcutils.com/_video/json-fix.mp4"
             type="video/mp4"
@@ -202,7 +202,7 @@ function OFFLine() {
   return (
     <Section>
       <div className="demo">
-        <video autoPlay loop playsInline poster={offlinepng} width="100%">
+        <video autoPlay loop playsInline muted poster={offlinepng} width="100%">
           <source
             src="https://www.abcutils.com/_video/offline.mp4"
             type="video/mp4"
@@ -239,7 +239,7 @@ function APIDOC(){
           frameBorder="0" 
           width="100%"
           height="500"
-          src="https://abcutils.com/apps/barcode?mode=import&input=mode=import&input=hello abcutils" 
+          src="https://abcutils.com/apps/qrcode?mode=import&input=mode=import&input=hello abcutils" 
         />
       </div>
       <div className="desc in-right">
@@ -254,7 +254,7 @@ function APIDOC(){
   frameborder="0" 
   width="100%"
   height="500"
-  src="https://abcutils.com/apps/barcode?mode=import&input=hello abcutils" 
+  src="https://abcutils.com/apps/qrcode?mode=import&input=hello abcutils" 
 />
 `} 
           </code>
@@ -288,7 +288,7 @@ function ALLUTILS() {
         </div>
       </div>
       <div className="demo">
-        <video autoPlay loop playsInline poster={sp} width="100%">
+        <video autoPlay loop playsInline  muted poster={sp} width="100%">
           <source
             src="https://www.abcutils.com/_video/all-utils.mp4"
             type="video/mp4"
