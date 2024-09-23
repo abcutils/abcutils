@@ -4,13 +4,16 @@ import Done from "@mui/icons-material/Done";
 import OfflineBoltIcon from "@mui/icons-material/OfflineBolt";
 import { styled } from "styled-components";
 import sp from "./sp.png";
+import offlinepng from "./offline.png";
 import { Tooltip } from "@mui/material";
 
 export default function () {
   return (
     <main>
       <FirstScreen />
-      <AIFixJSON />
+      <OFFLine />
+      <ALLUTILS />
+      <APIDOC />
       <UtilsList />
       <QAList />
       <Changelog />
@@ -19,10 +22,23 @@ export default function () {
 }
 
 const Section = styled.section`
+  position: relative;
   display: flex;
   padding: 50px 10%;
+  @media (max-width: 700px) {
+    flex-direction: column;
+    .desc,
+    .demo {
+      width: auto !important;
+    }
+  }
   h1 {
     color: #000000;
+  }
+
+  .anchor-point{
+    position: absolute;
+    top:-60px;
   }
 
   .desc {
@@ -35,7 +51,8 @@ const Section = styled.section`
 
   .demo {
     width: 60%;
-    img {
+    img,
+    video,iframe {
       box-shadow: 0px 0px 36px 13px #0000002e;
     }
   }
@@ -111,12 +128,12 @@ function FirstScreen() {
               sx={{ color: "#00c597", verticalAlign: "middle", marginRight: 1 }}
             />
             <span>
+              使用 PWA 技术保障网站离线可用
               <Tooltip title="离线可用" arrow>
                 <OfflineBoltIcon
                   sx={{ color: "#646cff", verticalAlign: "middle" }}
                 />
               </Tooltip>
-              使用 PWA 技术保障网站离线可用
             </span>
           </p>
           <p>
@@ -170,34 +187,113 @@ function FirstScreen() {
         </Button>
       </div>
       <div className="demo">
-        <img src={sp} width="100%" />
+        <video autoPlay loop playsInline poster={sp} width="100%">
+          <source
+            src="https://www.abcutils.com/_video/json-fix.mp4"
+            type="video/mp4"
+          ></source>
+        </video>
       </div>
     </Section>
   );
 }
 
-function AIFixJSON() {
+function OFFLine() {
   return (
     <Section>
       <div className="demo">
-        <img src={sp} width="100%" />
+        <video autoPlay loop playsInline poster={offlinepng} width="100%">
+          <source
+            src="https://www.abcutils.com/_video/offline.mp4"
+            type="video/mp4"
+          ></source>
+        </video>
       </div>
       <div className="desc in-right">
-        <h1>集成 AI 能力</h1>
+        <h1>离线可用</h1>
         <div>
           <p>
-            <span>JSON/XML/HTML 格式错误, AI一键修复</span>
+            <span>
+              仅需一次在线访问, PWA 技术保障工具离线可用{" "}
+              <Tooltip title="离线可用" arrow>
+                <OfflineBoltIcon
+                  sx={{ color: "#646cff", verticalAlign: "middle" }}
+                />
+              </Tooltip>
+            </span>
           </p>
           <p>
-            <span>AI 翻译，一次输入，多语言输出</span>
-          </p>
-          <p>
-            <span>每日免费额度的AI对话</span>
-          </p>
-          <p>
-            <span>更多 AI 能力助你快速提高工作效率</span>
+            <span>工具完全离线，保障你的数据安全</span>
           </p>
         </div>
+      </div>
+    </Section>
+  );
+}
+
+
+function APIDOC(){
+  return <Section>
+      <div className="demo">
+        <iframe 
+          frameBorder="0" 
+          width="100%"
+          height="500"
+          src="https://abcutils.com/apps/barcode?mode=import&input=mode=import&input=hello abcutils" 
+        />
+      </div>
+      <div className="desc in-right">
+        <a id="api" className="anchor-point"></a>
+        <h1>API</h1>
+        <div>
+          <p>
+            仅需要一行代码，在你的站点使用 abc utils。
+          </p>
+          <code>{`<!-- html -->
+<iframe 
+  frameborder="0" 
+  width="100%"
+  height="500"
+  src="https://abcutils.com/apps/barcode?mode=import&input=hello abcutils" 
+/>
+`} 
+          </code>
+        </div>
+        <div>
+          <p>
+            参数说明
+          </p>
+          <code>
+{`* https://abcutils.com/\${appPath}?mode=import&\${otherParams}
+* mode=import 固定当前为引入模式，工具会做一些适配 UI 适配
+* input=xxxxx 部分工具支持通过 URL 传入默认输出数据
+`}</code>
+        </div>
+      </div>
+  </Section>
+}
+
+function ALLUTILS() {
+  return (
+    <Section>
+      <div className="desc in-right">
+        <h1>持续更新，已支持 20+</h1>
+        <div>
+          <p>
+            <span>包括不限于 格式化、类型转换、内容生成</span>
+          </p>
+          <p>
+            <span>多端覆盖，在线Web，离线访问，桌面App</span>
+          </p>
+        </div>
+      </div>
+      <div className="demo">
+        <video autoPlay loop playsInline poster={sp} width="100%">
+          <source
+            src="https://www.abcutils.com/_video/all-utils.mp4"
+            type="video/mp4"
+          ></source>
+        </video>
       </div>
     </Section>
   );
@@ -206,7 +302,7 @@ function AIFixJSON() {
 function UtilsList() {
   return (
     <Section className="utils-all">
-      <a id="utils"></a>
+      <a id="utils" className="anchor-point" ></a>
       <h1>工具集预览 20+</h1>
 
       <div className="utils-links">
@@ -283,11 +379,10 @@ function UtilsList() {
 function QAList() {
   return (
     <Section className="log-module">
-      <a id="faqs">
-        <h1>FAQs</h1>
-      </a>
+      <a id="faqs" className="anchor-point"></a>
+      <h1>FAQs</h1>
       <h2>abcutils 收费吗？</h2>
-      <p>工具集完全免费，避免不分 AI能力 被滥用，未来可能会有人机校验</p>
+      <p>工具集完全免费，避免 AI 能力被滥用，可能会有人机校验</p>
     </Section>
   );
 }
@@ -295,9 +390,8 @@ function QAList() {
 function Changelog() {
   return (
     <Section className="log-module">
-      <a id="changelog">
-        <h1>更新日志</h1>
-      </a>
+      <a id="changelog" className="anchor-point" ></a>
+      <h1>更新日志</h1>
       <h2>2024年9月</h2>
       <div>
         <ul>

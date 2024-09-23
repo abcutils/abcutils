@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "build": "rm -rf build && vite build && npm run build:ssr",
-    "build:ssr":"vite build --config vite.config.ssr.js --ssr && node server.js"
+    "build:ssr": "vite build --config vite.config.ssr.js --ssr && node server.js"
   },
   "dependencies": {
     "@babel/plugin-syntax-import-meta": "7.10.4",
@@ -46,6 +46,7 @@
     "react-qr-code": "2.0.15",
     "react-reflex": "4.2.6",
     "react-router-dom": "6.26.0",
+    "remark-gfm": "^4.0.0",
     "rollup-plugin-visualizer": "^5.12.0",
     "sql-formatter": "15.4.0",
     "styled-components": "6.1.13",

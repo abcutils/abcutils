@@ -23,15 +23,15 @@ import {
 import { styled } from "styled-components";
 
 import { useStorgeState } from "$src/hooks";
-import { isInElectronMacApp } from "$src/utils";
-import { Logo, PWA, Baffle } from "$src/components";
+import { isBrowser, isInElectronMacApp } from "$src/utils";
+import { Logo, PWA, Baffle, Icons } from "$src/components";
 
 const _isInElectronMacApp = isInElectronMacApp();
 
 const MacAppTitleBar = styled.div`
   position: absolute;
   width: 100%;
-  height: ${($display) => ($display ? "30px" : 0)};
+  height: ${({ $display }) => ($display ? "30px" : 0)};
   top: 0;
   z-index: 1000;
   -webkit-app-region: drag;
@@ -136,6 +136,7 @@ const BodyContent = styled.div`
   .vertical.reflex-element {
     box-sizing: border-box;
     padding: ${_isInElectronMacApp ? "30px 20px" : "10px 20px"};
+    max-height:100vh;
   }
   .input-title,
   .output-title {
@@ -175,32 +176,32 @@ export const NAV_LIST = [
   {
     text: "JSON 格式化/压缩",
     path: "/apps/json",
-    icon: <Code size="24" />,
+    icon: <Icons.JSON size="24" />,
   },
   {
     text: "XML 格式化/压缩",
     path: "/apps/xml",
-    icon: <Code size="24" />,
+    icon: <Icons.XML size="24" />,
   },
   {
     text: "HTML 格式化/压缩",
     path: "/apps/html",
-    icon: <Code size="24" />,
+    icon: <Icons.HTML size="24" />,
   },
   {
     text: "CSS 格式化/压缩",
     path: "/apps/css",
-    icon: <Code size="24" />,
+    icon: <Icons.CSS size="24" />,
   },
   {
     text: "JS 格式化/压缩",
     path: "/apps/javascript",
-    icon: <Code size="24" />,
+    icon: <Icons.JS size="24" />,
   },
   {
     text: "SQL 格式化",
     path: "/apps/sql",
-    icon: <Code size="24" />,
+    icon: <Icons.SQL size="24" />,
   },
   {
     text: "JSON 转 XML",
@@ -216,6 +217,11 @@ export const NAV_LIST = [
     text: "Hex 转 ASCII",
     path: "/apps/hex2ascii",
     icon: <Transform size="24" />,
+  },
+  {
+    text: "正则表达式",
+    path: "/apps/regexp",
+    icon: <Icons.RegExp size="24" />,
   },
   {
     text: "条形码生成",
@@ -271,8 +277,7 @@ export const NAV_LIST = [
 
 export default function () {
   const location = useLocation();
-  const [sidebarDisplay, setSidebarDisplay] = useStorgeState(
-    true,
+  const [sidebarDisplay, setSidebarDisplay] = useStorgeState(getDefaultSidebarDisplay(),
     "abcutils-sidebar-display"
   );
   const [searchKey, setSearchKey] = React.useState();
@@ -401,4 +406,12 @@ function filterUtils(utilsList, filterKey) {
     });
   }
   return utilsList;
+}
+
+
+function getDefaultSidebarDisplay(){
+  if(isBrowser()){
+    return !(location.search.indexOf("mode=import") > -1);
+  }
+  return true;
 }

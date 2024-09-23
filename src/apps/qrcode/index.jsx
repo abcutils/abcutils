@@ -7,6 +7,7 @@ import DialogContent from "@mui/material/DialogContent";
 import ReactQRCode from "react-qr-code";
 import { styled } from "styled-components";
 import { TextareaAutosize, Pager, PasteBtn, AboutApp } from "$src/components";
+import { useSearchParams } from "react-router-dom";
 import readme from "./readme.md?raw";
 import { useStorgeState } from "$src/hooks";
 
@@ -31,8 +32,14 @@ const PagerA4 = styled(Pager.A4)`
 const EXP = ["https://google.com", "hello", "world"].join("\n");
 
 export default function () {
-  const [input, setInput] = useStorgeState(EXP, "app-qrcode-input");
+  const [params] = useSearchParams()
+  const [input, setInput] = useStorgeState(EXP || EXP, "app-qrcode-input");
   const [showBarcode, setShowBarcode] = React.useState(false);
+  React.useEffect(()=>{
+    if(params.get("input")){
+      setInput(params.get("input"))
+    }
+  }, [])
   return (
     <ReflexContainer orientation="vertical">
       <ReflexElement flex={3}>

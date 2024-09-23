@@ -56,6 +56,9 @@ export default function () {
         <a href="#faqs" className="link">
           FAQs
         </a>
+        <a href="#api" className="link">
+          API
+        </a>
         <a href="#changelog" className="link">
           更新日志
         </a>

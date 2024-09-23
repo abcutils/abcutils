@@ -5,14 +5,13 @@ import Tooltip from "@mui/material/Tooltip";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
-
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
-
 import { styled } from "styled-components";
-
 import ReactMarkdown from "react-markdown";
+import remarkGfm from 'remark-gfm'
+import './github-markdown.css'
 
 import "./index.less";
 
@@ -59,7 +58,7 @@ function DialogAbout({ readme, onClose }) {
         <CloseIcon />
       </IconButton>
       <DialogContent>
-        <ReactMarkdownLayout>{readme}</ReactMarkdownLayout>
+        <ReactMarkdownLayout className="markdown-body" remarkPlugins={[remarkGfm]}>{readme}</ReactMarkdownLayout>
       </DialogContent>
       <DialogActions>
         <Button onClick={onClose}>关闭</Button>

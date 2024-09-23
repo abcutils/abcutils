@@ -2,13 +2,13 @@ import React from "react";
 import Button from "@mui/material/Button";
 import clipboard from "clipboardy";
 
-// <CopyBtn onPaste={()=> "hello world"} />
-
 const CP_TXT = "贴入";
 const CP_SUCCESS_TXT = "成功";
 
+// <Paste onPaste={()=> "hello world"} text="贴入" />
+
 export default function (props) {
-  const [text, setText] = React.useState(CP_TXT);
+  const [text, setText] = React.useState(props.text || CP_TXT);
   const showSuccess = React.useCallback(() => {
     setText(CP_SUCCESS_TXT);
     setTimeout(() => {
