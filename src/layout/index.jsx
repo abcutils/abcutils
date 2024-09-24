@@ -11,7 +11,6 @@ import IconButton from "@mui/material/IconButton";
 import NavigateBeforeIcon from "@mui/icons-material/NavigateBefore";
 import {
   Transform,
-  Code,
   Fingerprint,
   QrCode,
   Compress,
@@ -49,7 +48,7 @@ const AppLayout = styled.div`
     position: relative;
     z-index: 1;
     &:hover {
-      box-shadow: 0 0 3px 1px #707070;
+      box-shadow: 0 0 3px 1px var(--divider-color);
     }
     .silder-toggle-btn {
       position: absolute;
@@ -64,12 +63,10 @@ const AppLayout = styled.div`
 
 const SildeWidth = "300px";
 const Silder = styled.div`
-  --background-color: #f0f0f0;
-  --dc-background-color: #e3e3e3;
   position: relative;
   width: ${({ $display }) => ($display ? SildeWidth : 0)};
-  border-right: 1px solid #e2e1e0;
-  background-color: var(--background-color);
+  border-right: 1px solid  var(--divider-color);
+  background-color: var(--background-color-2);
   height: 100vh;
   overflow: hidden;
   z-index: 2;
@@ -95,11 +92,6 @@ const Silder = styled.div`
     }
   }
   .nav-footer-bar {
-    background: linear-gradient(
-      358deg,
-      var(--dc-background-color),
-      var(--background-color)
-    );
     min-height: 70px;
     text-align: center;
     display: flex;
@@ -107,15 +99,8 @@ const Silder = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
-    &:hover {
-      background: linear-gradient(
-        358deg,
-        var(--background-color),
-        var(--dc-background-color)
-      );
-    }
     .website {
-      color: #000000;
+      /* color: #000000; */
       box-sizing: border-box;
       &:hover {
         border-bottom: 1px solid #000000;
@@ -158,18 +143,6 @@ const NavSearch = styled.div`
   padding: 0 10px;
   padding-top: ${_isInElectronMacApp ? "20px" : ""};
   box-sizing: border-box;
-  background: linear-gradient(
-    358deg,
-    var(--background-color),
-    var(--dc-background-color)
-  );
-  &:hover {
-    background: linear-gradient(
-      358deg,
-      var(--dc-background-color),
-      var(--background-color)
-    );
-  }
 `;
 
 export const NAV_LIST = [
@@ -277,9 +250,7 @@ export const NAV_LIST = [
 
 export default function () {
   const location = useLocation();
-  const [sidebarDisplay, setSidebarDisplay] = useStorgeState(getDefaultSidebarDisplay(),
-    "abcutils-sidebar-display"
-  );
+  const [sidebarDisplay, setSidebarDisplay] = useStorgeState(false, "abcutils-sidebar-display", getDefaultSidebarDisplay());
   const [searchKey, setSearchKey] = React.useState();
   const { apps, hasLike, toggleLikePath } = useSortLikeApps(NAV_LIST);
   return (
@@ -411,7 +382,7 @@ function filterUtils(utilsList, filterKey) {
 
 function getDefaultSidebarDisplay(){
   if(isBrowser()){
-    return !(location.search.indexOf("mode=import") > -1);
+    return location.search.indexOf("mode=import") > -1 ? false : undefined;
   }
-  return true;
+  return undefined;
 }

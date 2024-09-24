@@ -5,7 +5,6 @@ import { PWA, Logo } from "$src/components";
 import { Tooltip } from "@mui/material";
 
 const Footer = styled.div`
-  background: white;
   padding: 50px 0;
   background-position: top;
   display: flex;

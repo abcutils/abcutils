@@ -33,7 +33,7 @@ const Section = styled.section`
     }
   }
   h1 {
-    color: #000000;
+    /* color: #000000; */
   }
 
   .anchor-point{
@@ -239,7 +239,7 @@ function APIDOC(){
           frameBorder="0" 
           width="100%"
           height="500"
-          src="https://abcutils.com/apps/qrcode?mode=import&input=mode=import&input=hello abcutils" 
+          src="https://abcutils.com/apps/qrcode?mode=import&input=hello abcutils" 
         />
       </div>
       <div className="desc in-right">
@@ -400,7 +400,7 @@ function Changelog() {
               代码开源
             </a>
           </li>
-          <li>搜索引擎优化：支持每个工具撰写readme.md, 并SSG构建静态站点</li>
+          <li>搜索引擎优化：支持每个工具撰写readme.md, 支持 SSG 构建静态站点</li>
           <li>
             <Tooltip title="离线可用" arrow>
               <OfflineBoltIcon

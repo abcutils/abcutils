@@ -1,9 +1,15 @@
 import React from "react";
 import { isBrowser } from "$src/utils";
 
-export default function useStorgeState(defaultValue, storgeKey) {
-  const storgeValue = getStorge(storgeKey, defaultValue);
-  const [value, setValue] = React.useState(storgeValue);
+// useStorgeState(defaultValue, storgeKey, firstValue)
+export default function useStorgeState(defaultValue, storgeKey, firstValue) {
+  // 首次渲染，优先使用 firstValue
+  const [value, setValue] = React.useState(function(){
+    if(firstValue !== undefined && firstValue !== null) {
+      return firstValue
+    }
+    return getStorge(storgeKey, defaultValue);
+  });
   const newSetValue = React.useCallback(
     (v) => {
       setValue(v);

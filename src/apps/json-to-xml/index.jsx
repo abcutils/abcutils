@@ -5,9 +5,8 @@ import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { toXML } from "./jstoxml";
 import { jsonrepair } from "jsonrepair";
-import Editor from "@monaco-editor/react";
 import readme from "./readme.md?raw";
-import { CopyBtn, PasteBtn, LoadingButton, AboutApp } from "$src/components";
+import { CopyBtn, PasteBtn, LoadingButton, AboutApp, MonacoEditor} from "$src/components";
 import { useStorgeState } from "$src/hooks";
 
 const EXP = JSON.stringify({
@@ -74,7 +73,7 @@ export default function () {
             </Button>
           </div>
         </div>
-        <Editor
+        <MonacoEditor
           defaultLanguage="json"
           height="calc(100vh - 100px)"
           value={input}
@@ -105,7 +104,7 @@ export default function () {
             </Select>
           </div>
         </div>
-        <Editor
+        <MonacoEditor
           defaultLanguage="xml"
           height="calc(100vh - 100px)"
           value={outputFormat(input, indentType)}

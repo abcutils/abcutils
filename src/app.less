@@ -10,6 +10,25 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root{
+    --background-color:#202124;
+    --background-color-2:#292A2D;
+    --color: #ffffff;
+    --divider-color:rgba(255, 255, 255, 0.12);
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root{
+    --background-color:#f8f9fb;
+    --background-color-2:#f6f6f6;
+    --color: #000000;
+    --divider-color:#c7c7c7;
+  }
+}
+
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -18,42 +37,33 @@ a {
     color:#adadad ;
   }
 }
+
 body {
   margin: 0;
-  // display: flex;
-  // place-items: center;
-  // min-width: 320px;
   min-height: 100vh;
-  background-color: #f8f9fb;
+  background-color: var(--background-color);
+  color: var(--color)
 }
 
 code{
   display: block;
   white-space:pre;
-  background-color: #e8e8e8;
+  background-color: var(--background-color-2);
   padding:1em;
   border-radius: 6px;
   overflow: auto;
 }
 
 
-@media (prefers-color-scheme: light) {
-
-}
 
 
-/* default ui */ 
-
-// select{
-//   border-radius: 8px;
-//   box-sizing: border-box;
-//   height: 2em;
-//   line-height: 2em;
-//   padding: 0 1em;
-// }
 
 /* overwrite */
 
 .MuiDialog-container{
   backdrop-filter: blur(6px);
+}
+.reflex-splitter{
+  background-color: var(--background-color-2) !important;
+  border-color:var(--divider-color) !important
 }

@@ -9,3 +9,4 @@ export { default as Logo } from "./logo";
 export { default as PWA } from "./pwa";
 export { default as Baffle } from "./baffle";
 export { default as Icons } from "./icons";
+export { default as MonacoEditor } from "./monaco-editor";

@@ -6,7 +6,7 @@ import { styled } from "styled-components";
 const Header = styled.header`
   height: 100px;
   position: sticky;
-  background-color: rgba(255, 255, 255, 0.771);
+  background-color: var(--background-color-2);
   display: flex;
   justify-content: space-between;
   align-items: center;

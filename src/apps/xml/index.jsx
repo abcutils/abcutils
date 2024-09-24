@@ -7,9 +7,8 @@ import MenuItem from "@mui/material/MenuItem";
 // import { toXML } from 'jstoxml/dist/jstoxml.js';
 // import { toXML } from './jstoxml';
 import xmlFormat from "xml-formatter";
-import Editor from "@monaco-editor/react";
 import readme from "./readme.md?raw";
-import { CopyBtn, PasteBtn, AboutApp } from "$src/components";
+import { CopyBtn, PasteBtn, AboutApp, MonacoEditor} from "$src/components";
 import { useStorgeState } from "$src/hooks";
 
 const EXP = `<web><name>ABC utils</name>
@@ -66,7 +65,7 @@ export default function () {
             </Button>
           </div>
         </div>
-        <Editor
+        <MonacoEditor
           defaultLanguage="xml"
           height="calc(100vh - 100px)"
           value={input}
@@ -97,7 +96,7 @@ export default function () {
             </Select>
           </div>
         </div>
-        <Editor
+        <MonacoEditor
           defaultLanguage="xml"
           height="calc(100vh - 100px)"
           value={outputFormat(input, indentType)}

@@ -1,6 +1,5 @@
 import React from "react";
 import classnames from "classnames";
-import Button from "@mui/material/Button";
 import FormatAlignLeftIcon from "@mui/icons-material/FormatAlignLeft";
 import FormatAlignCenterIcon from "@mui/icons-material/FormatAlignCenter";
 import FormatAlignRightIcon from "@mui/icons-material/FormatAlignRight";

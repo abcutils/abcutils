@@ -4,10 +4,9 @@ import Button from "@mui/material/Button";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import beautify from "js-beautify";
-import Editor from "@monaco-editor/react";
 import useRequest from "ahooks/es/useRequest";
 import readme from "./readme.md?raw";
-import { CopyBtn, PasteBtn, AboutApp } from "$src/components";
+import { CopyBtn, PasteBtn, AboutApp, MonacoEditor} from "$src/components";
 import { useStorgeState } from "$src/hooks";
 import babelTransform from "./babelTransform";
 import EXP from "./exp";
@@ -68,7 +67,7 @@ export default function () {
             </Button>
           </div>
         </div>
-        <Editor
+        <MonacoEditor
           defaultLanguage="javascript"
           height="calc(100vh - 100px)"
           value={input}
@@ -99,7 +98,7 @@ export default function () {
             </Select>
           </div>
         </div>
-        <Editor
+        <MonacoEditor
           defaultLanguage="javascript"
           height="calc(100vh - 100px)"
           value={output}

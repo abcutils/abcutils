@@ -4,9 +4,8 @@ import Button from "@mui/material/Button";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { format } from "sql-formatter";
-import Editor from "@monaco-editor/react";
 import readme from "./readme.md?raw";
-import { CopyBtn, PasteBtn, AboutApp } from "$src/components";
+import { CopyBtn, PasteBtn, AboutApp, MonacoEditor} from "$src/components";
 import { useStorgeState } from "$src/hooks";
 import EXP from "./exp";
 
@@ -58,7 +57,7 @@ export default function () {
             </Button>
           </div>
         </div>
-        <Editor
+        <MonacoEditor
           defaultLanguage="sql"
           height="calc(100vh - 100px)"
           value={input}
@@ -89,7 +88,7 @@ export default function () {
             </Select>
           </div>
         </div>
-        <Editor
+        <MonacoEditor
           defaultLanguage="sql"
           height="calc(100vh - 100px)"
           value={outputFormat(input, indentType)}

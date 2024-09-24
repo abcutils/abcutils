@@ -33,13 +33,9 @@ const EXP = ["https://google.com", "hello", "world"].join("\n");
 
 export default function () {
   const [params] = useSearchParams()
-  const [input, setInput] = useStorgeState(EXP || EXP, "app-qrcode-input");
+  const [input, setInput] = useStorgeState(EXP, "app-qrcode-input", params.get("input"));
   const [showBarcode, setShowBarcode] = React.useState(false);
-  React.useEffect(()=>{
-    if(params.get("input")){
-      setInput(params.get("input"))
-    }
-  }, [])
+  
   return (
     <ReflexContainer orientation="vertical">
       <ReflexElement flex={3}>

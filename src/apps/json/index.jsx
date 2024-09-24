@@ -5,12 +5,10 @@ import Button from "@mui/material/Button";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import { jsonrepair } from "jsonrepair";
-import Editor from "@monaco-editor/react";
-import { CopyBtn, PasteBtn, LoadingButton, AboutApp } from "$src/components";
+import { CopyBtn, PasteBtn, LoadingButton, AboutApp, MonacoEditor } from "$src/components";
 import { useStorgeState } from "$src/hooks";
 import readme from "./readme.md?raw";
 
-// import "./index.less";
 
 const INPUT_STORGE_KEY = "app-json-input";
 const INDENT_STORGE_KEY = "app-json-indentType";
@@ -78,7 +76,7 @@ export default function () {
             </Button>
           </div>
         </div>
-        <Editor
+        <MonacoEditor
           defaultLanguage="json"
           width="100%"
           height="calc(100vh - 100px)"
@@ -132,7 +130,7 @@ export default function () {
             </LoadingButton>
           </div>
         ) : (
-          <Editor
+          <MonacoEditor
             defaultLanguage="json"
             width="100%"
             height="calc(100vh - 100px)"
