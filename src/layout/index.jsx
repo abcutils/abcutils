@@ -235,6 +235,10 @@ export const NAV_LIST = [
     text: "UUID 生成",
     path: "/apps/uuid",
     icon: <Fingerprint size="24" />,
+  },{
+    text: "屏幕颜色提取",
+    path: "/apps/eye-dropper",
+    icon: <Icons.EyeDropper size="24" />,
   },
   {
     text: "图片裁剪",

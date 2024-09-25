@@ -6,6 +6,7 @@ import HTML from './html'
 import CSS from './css'
 import JS from './js'
 import SQL from './sql'
+import EyeDropper from './eye-dropper'
 
 function createIcon(Component){
   return function(props){
@@ -24,4 +25,5 @@ export default {
   CSS: createIcon(CSS),
   JS: createIcon(JS),
   SQL: createIcon(SQL),
+  EyeDropper: createIcon(EyeDropper)
 }
