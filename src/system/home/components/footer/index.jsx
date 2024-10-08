@@ -9,6 +9,7 @@ const Footer = styled.div`
   background-position: top;
   display: flex;
   justify-content: space-evenly;
+  background-color: var(--background-color-2);
   .other-links {
     line-height: 2em;
     a {

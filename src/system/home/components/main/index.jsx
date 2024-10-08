@@ -1,11 +1,17 @@
+import React from 'react'
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
 import Done from "@mui/icons-material/Done";
+import { DialogActions, Tooltip } from "@mui/material";
 import OfflineBoltIcon from "@mui/icons-material/OfflineBolt";
 import { styled } from "styled-components";
+import { isBrowser } from "$src/utils";
 import sp from "./sp.png";
 import offlinepng from "./offline.png";
-import { Tooltip } from "@mui/material";
+import install from "./install.png";
 
 export default function () {
   return (
@@ -56,7 +62,6 @@ const Section = styled.section`
       box-shadow: 0px 0px 36px 13px #0000002e;
     }
   }
-
   &&.utils-all {
     display: block;
     text-align: center;
@@ -106,6 +111,7 @@ const Section = styled.section`
 `;
 
 function FirstScreen() {
+  const [display, setDisplay] = React.useState(false)
   return (
     <Section>
       <div className="desc">
@@ -151,40 +157,23 @@ function FirstScreen() {
             <span>不收集客户数据，保障你的隐私安全</span>
           </p>
         </div>
-
         <Button
           size="large"
           variant="outlined"
           component={Link}
           to="/apps/json"
-          sx={{ marginBottom: 1 }}
         >
           免费在线使用
         </Button>
-        <br />
         <Button
           size="large"
-          variant="outlined"
-          component={"a"}
-          href="https://auto-rok-game.oss-cn-hangzhou.aliyuncs.com/abc-utils/ABC%20Utils-darwin-arm64-1.0.0.zip"
-          target="_blank"
-          sx={{ marginBottom: 1 }}
+          variant="contained"
+          sx={{ marginLeft: 1 }}
+          onClick={()=> setDisplay(true)}
         >
-          下载 Mac OS App(darwin-arm64)
+          安装 PWA App
         </Button>
-
-        <br />
-        <Button
-          disabled
-          size="large"
-          variant="outlined"
-          component={"a"}
-          href=""
-          target="_blank"
-          title="制作中..."
-        >
-          下载 Windows App(x64)
-        </Button>
+        
       </div>
       <div className="demo">
         <video autoPlay loop playsInline muted poster={sp} width="100%">
@@ -194,6 +183,13 @@ function FirstScreen() {
           ></source>
         </video>
       </div>
+      <Dialog open={display} maxWidth="lg"  >
+        <DialogTitle>如下图所示，通过浏览器安装 ABC Utils App</DialogTitle>
+        <DialogContent>
+          <img src={install} className="install-img" style={{width: getWindowWidth() * 0.5}} />
+        </DialogContent>
+        <DialogActions><Button onClick={()=> setDisplay(false)}>关闭</Button></DialogActions>
+      </Dialog>
     </Section>
   );
 }
@@ -427,4 +423,12 @@ function Changelog() {
       </div>
     </Section>
   );
+}
+
+
+function getWindowWidth(){
+  if( isBrowser()){
+    return window.innerWidth
+  }
+  return 1024
 }
