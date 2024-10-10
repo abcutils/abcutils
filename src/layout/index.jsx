@@ -20,7 +20,6 @@ import {
 } from "@mui/icons-material";
 
 import { styled } from "styled-components";
-
 import { useStorgeState } from "$src/hooks";
 import { isBrowser, isInElectronMacApp } from "$src/utils";
 import { Logo, PWA, Baffle, Icons } from "$src/components";
@@ -254,9 +253,11 @@ export const NAV_LIST = [
 
 export default function () {
   const location = useLocation();
-  const [sidebarDisplay, setSidebarDisplay] = useStorgeState(false, "abcutils-sidebar-display", getDefaultSidebarDisplay());
+  const [sidebarDisplay, setSidebarDisplay] = useStorgeState(true, "abcutils-sidebar-display", getDefaultSidebarDisplay());
   const [searchKey, setSearchKey] = React.useState();
   const { apps, hasLike, toggleLikePath } = useSortLikeApps(NAV_LIST);
+
+ 
   return (
     <>
       <Baffle></Baffle>
@@ -385,6 +386,10 @@ function filterUtils(utilsList, filterKey) {
 
 
 function getDefaultSidebarDisplay(){
+  // 如果屏幕宽度小于1024默认隐藏
+  if(window.innerWidth < 1300){
+    return false
+  }
   if(isBrowser()){
     return location.search.indexOf("mode=import") > -1 ? false : undefined;
   }
