@@ -387,10 +387,10 @@ function filterUtils(utilsList, filterKey) {
 
 function getDefaultSidebarDisplay(){
   // 如果屏幕宽度小于1024默认隐藏
-  if(window.innerWidth < 1300){
-    return false
-  }
   if(isBrowser()){
+    if(window.innerWidth < 1300){
+      return false
+    }
     return location.search.indexOf("mode=import") > -1 ? false : undefined;
   }
   return undefined;
