@@ -54,7 +54,6 @@ export default defineConfig({
         short_name: 'ABC Utils',
         start_url:"/apps/json",
         description: 'ABC Utils - 免费、开源、集成AI能力的日常工具库',
-        theme_color: '#ffffff',
         icons: [
           {
             src: 'icon-192x192.png',
