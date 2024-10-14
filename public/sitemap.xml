@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://abcutils.com/</loc>
+  <lastmod>2024-10-13T08:51:55+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/json</loc>
+  <lastmod>2024-10-13T08:51:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/xml</loc>
+  <lastmod>2024-10-14T08:31:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/html</loc>
+  <lastmod>2024-10-14T08:31:21+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/css</loc>
+  <lastmod>2024-10-14T08:31:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/sql</loc>
+  <lastmod>2024-10-13T08:51:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/image-crop</loc>
+  <lastmod>2024-10-14T08:31:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/image-compress</loc>
+  <lastmod>2024-10-14T08:31:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/json-to-xml</loc>
+  <lastmod>2024-10-13T08:51:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/ascii2hex</loc>
+  <lastmod>2024-10-14T08:31:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/hex2ascii</loc>
+  <lastmod>2024-10-13T08:51:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/barcode</loc>
+  <lastmod>2024-10-14T08:31:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/qrcode</loc>
+  <lastmod>2024-10-14T08:31:31+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/md5</loc>
+  <lastmod>2024-10-14T08:31:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/md5-files</loc>
+  <lastmod>2024-10-14T08:31:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/base64</loc>
+  <lastmod>2024-10-13T08:51:55+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/base64-files</loc>
+  <lastmod>2024-10-14T08:31:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/sha256</loc>
+  <lastmod>2024-10-14T08:31:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/demo</loc>
+  <lastmod>2024-10-14T08:31:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/faqs</loc>
+  <lastmod>2024-10-14T08:31:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/changelog</loc>
+  <lastmod>2024-10-14T08:31:19+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/qrcode?mode=import&amp;input=hello%20abcutils</loc>
+  <lastmod>2024-10-13T08:51:57+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/javascript</loc>
+  <lastmod>2024-10-14T08:31:20+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/regexp</loc>
+  <lastmod>2024-10-14T08:31:31+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/uuid</loc>
+  <lastmod>2024-10-14T08:31:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://abcutils.com/apps/eye-dropper</loc>
+  <lastmod>2024-10-14T08:31:19+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
+</urlset>
