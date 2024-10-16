@@ -12,10 +12,9 @@
 
 - 每周一次构建 main 分支，发布到 <https://abcutils.com>
 
-## 开发计划
+## 安装 APP
 
-- Mac App 正在构建中...
-- Windows App 正在构建中...
+- 访问 <https://abcutils.com> 获取 MAC Windows PWA APP
 
 ## 反馈&贡献
 

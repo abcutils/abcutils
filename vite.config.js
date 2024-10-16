@@ -5,6 +5,7 @@ import { VitePWA } from "vite-plugin-pwa";
 import dayjs from "dayjs";
 import { visualizer } from "rollup-plugin-visualizer";
 import vitePluginConditionalCompile from "vite-plugin-conditional-compile";
+import manifest from './manifest.json'
 
 // const queryString = process.argv[4] || "";
 // 自动版本号
@@ -49,24 +50,7 @@ export default defineConfig({
         globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg,woff2}"],
         maximumFileSizeToCacheInBytes: 8 * 1024 * 1024,
       },
-      manifest: {
-        name: 'ABC Utils',
-        short_name: 'ABC Utils',
-        start_url:"/apps/json",
-        description: 'ABC Utils - 免费、开源、集成AI能力的日常工具库',
-        icons: [
-          {
-            src: 'icon-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          {
-            src: 'icon-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
-        ],
-      },
+      manifest: manifest,
     }),
   ],
 });
