@@ -51,7 +51,7 @@ export default function () {
       </dl>
 
       <dl className="other-links">
-        <dt>开源社区</dt>
+        <dt>友情链接</dt>
         <dd>
           <Link to="https://mui.com/" target="_blank">
             MUI
@@ -127,6 +127,16 @@ export default function () {
         <dd>
           <Link to="https://www.npmjs.com/package/less" target="_blank">
             less
+          </Link>
+        </dd>
+        <dd>
+          <Link to="https://convertio.co/zh/" target="_blank">
+          convertio
+          </Link>
+        </dd>
+        <dd>
+          <Link to="https://yesicon.app" target="_blank">
+          yesicon
           </Link>
         </dd>
       </dl>
